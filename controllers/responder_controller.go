@@ -36,6 +36,7 @@ type ResponderReconciler struct {
 //+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=responders,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=responders/status,verbs=get;update;patch
 //+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=responders/finalizers,verbs=update
+//+kubebuilder:rbac:groups=delivery.controller-e2e-framework,resources=controller,verbs=get;list;watch;create;update;patch;delete
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -48,8 +49,6 @@ type ResponderReconciler struct {
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.14.1/pkg/reconcile
 func (r *ResponderReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
-
-	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil
 }

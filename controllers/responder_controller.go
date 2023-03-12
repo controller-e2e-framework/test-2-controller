@@ -63,7 +63,8 @@ func (r *ResponderReconciler) Reconcile(ctx context.Context, req ctrl.Request) (
 		return ctrl.Result{}, fmt.Errorf("failed to get responder: %w", err)
 	}
 
-	if obj.Status.Controlled {
+	labels := obj.GetLabels()
+	if v, ok := labels["controller-e2e-framework.controlled"]; ok && v == "true" {
 		logger.Info("this object has been acquired by a controller")
 		// Initialize the patch helper.
 		patchHelper, err := patch.NewHelper(obj, r.Client)

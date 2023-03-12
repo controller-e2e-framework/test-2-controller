@@ -25,8 +25,7 @@ type ResponderSpec struct{}
 
 // ResponderStatus defines the observed state of Responder
 type ResponderStatus struct {
-	Controlled bool `json:"controlled"`
-	Acquired   bool `json:"acquired"`
+	Acquired bool `json:"acquired"`
 }
 
 //+kubebuilder:object:root=true

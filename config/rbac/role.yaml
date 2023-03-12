@@ -8,6 +8,18 @@ rules:
 - apiGroups:
   - delivery.controller-e2e-framework
   resources:
+  - controller
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - delivery.controller-e2e-framework
+  resources:
   - responders
   verbs:
   - create

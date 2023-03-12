@@ -20,18 +20,14 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type Ref struct {
-	Name      string `json:"name"`
-	Namespace string `json:"namespace"`
-}
-
 // ResponderSpec defines the desired state of Responder
-type ResponderSpec struct {
-	ControllerRef *Ref `json:"foo,omitempty"`
-}
+type ResponderSpec struct{}
 
 // ResponderStatus defines the observed state of Responder
-type ResponderStatus struct{}
+type ResponderStatus struct {
+	Controlled bool `json:"controlled"`
+	Acquired   bool `json:"acquired"`
+}
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
